@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="rifqi">
+    <meta name"description" content="tujuan utama aku bikin web ini adalah untuk belajar(praktek), jika menemukan bug atau error di web ini mohon maaf karena aku masih pemula, terimakasih">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name"description" content="tujuan utama aku bikin web ini adalah untuk belajar(praktek), jika menemukan bug atau error di web ini mohon maaf karena aku masih pemula, terimakasih"
     <title> web ultah </title>
     <style>
         /* bikin background */
@@ -112,7 +112,7 @@ p {
   backdrop-filter: blur(8px);
   margin: 160px auto;
   width: 275px;
-  height: 144px;
+  height: 130px;
   border-radius: 10px;
   border: 2px solid black;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
@@ -145,14 +145,14 @@ p {
   background-color: red;
   position: absolute;
   transition: all 0.1s ease;
-  top: 110px;
+  top: 90px;
 }
 
 /* desain slide-3 */
 #slide-3 {
     display: none;
     width: 270px;
-    height: 220px;
+    height: 200px;
     background-color: #14161C;
     backdrop-filter: blur(8px);
     box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
@@ -161,7 +161,7 @@ p {
     color: white;
     font-weight: bold;
     text-align: center;
-    font-size: 15px;
+    font-size: 17px;
     font-family: sans-serif;
     line-height: 23px;
     padding: 35px 25px;
@@ -184,11 +184,31 @@ p {
     margin: 10px;
     position: top;
 }
+
+#bonus-slide {
+  display: none;
+    width: 270px;
+    height: 200px;
+    background-color: #14161C;
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    opacity: 0.8;
+    margin: 160px auto;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+    font-family: sans-serif;
+    line-height: 23px;
+    padding: 35px 25px;
+    border-radius: 15px;
+    border: 2px solid black;
+    }
     </style>
 </head>
 <body>
     
-    <!-- bikin tombol untuk memulai web -->
+<!-- bikin tombol untuk memulai web -->
 <div id='slide-0'>
     <h1>Coba klik kado ini!</h1>
     <a href="#" id="tombol-gambar">Klik Saya</a>
@@ -210,7 +230,7 @@ p {
 
 <!-- slide-2 setelah tombol lanjut di klik -->
 <div id='slide-2'>
-  <p>Aku punya hadiah buat kamu, mau terima?</p>
+  <p id= 'teks1'></p>
   <div class='button-group'>
     <button id='yes'>TERIMA</button>
     <button id='no'>TOLAK</button>
@@ -218,22 +238,18 @@ p {
 </div>
 
 <!-- slide-3 setelah tombol terima di klik -->
-<div id='slide-3'>
-    <h5>
-        Bercanda kok hehe, hadiahnya doa aja ya :D
-        <br>
-        Semoga tahun ini membawa sejuta petualangan baru, tawa yang tak pernah putus, dan segala hal baik yang <span id= 's1'>selama ini kamu harapkan.</span>
-        <br>
-        ...
-        <br>
-        
-        Usia adalah anugerah yang mendewasakan. Jadikan setiap lembaran tahun baru sebagai kesempatan untuk <span id= 's2'>membersihkan hati</span> dan menebar lebih banyak manfaat bagi sesama ^_^
-    </h5>
-    <button id= 'back'> Kembali ke halaman pertama </button>
+<div id= 'slide-3'>
+    <p id='teks2'></p>
+  <p id='teks3'></p>
+    <button id= 'back'> next </button>
+</div>
+<!-- kelanjutannya -->
+<div id= 'bonus-slide'>
+  <p id='bonus'></p>
 </div>
     
     <script>
-        //ambil elemen dari html biar bisa diatur pakai js 
+         //ambil elemen dari html biar bisa diatur pakai js 
 const slide1 = document.getElementById ('slide-1')
 const inputName = document.getElementById ('input-name')
 const nextButton = document.getElementById ('next')
@@ -246,6 +262,7 @@ const slide0 = document.getElementById ('slide-0')
 const startButton = document.getElementById ('tombol-gambar')
 const slide3 = document.getElementById ('slide-3')
 const backButton = document.getElementById ('back')
+const bonus = document.getElementById ('bonus-slide')
 
 // bikin supaya pas tombol kado di klik muncul video loading
 startButton.addEventListener ('click', function(e) {
@@ -283,6 +300,8 @@ nextButton.addEventListener ('click', function() {
   }
 });
 
+nextButton.addEventListener ('click', writeQuestion);
+
 // bikin supaya tombol tolak selalu kabur pas di klik di hp atau di deketin kursor mouse di pc (trik jahil mwehehehe)
 function run() {
         const maxX = slide2.clientWidth - noButton.offsetWidth;
@@ -298,19 +317,63 @@ noButton.addEventListener('mouseenter', run);
         e.preventDefault();
         run();
     });
-
-
-// jika tombol terima di klik
+    
+    // jika tombol terima di klik
 yesButton.addEventListener('click', function() {
     alert ('Gajadi soalnya kamu bau wleee...');
     slide2.style.display = 'none'
     slide3.style.display = 'block'
 });
+
+yesButton.addEventListener('click', writeDoa);
     
 backButton.addEventListener('click', function() {
     slide3.style.display = 'none'
-    slide0.style.display = 'block'
+    bonus.style.display = 'block'
 });
+backButton.addEventListener ('click', writeBonus);
+
+const teksHadiah = 'aku ada hadiah buat kamu, mau?';
+const teksDoa = 'hai namaku erry baoayavwks8suwBercanda kok hehe, hadiahnya doa aja ya :D';
+const teksMotivasi = 'Semoga tahun ini membawa sejuta petualangan baru, tawa yang tak pernah putus, dan segala hal baik yang selama ini kamu harapkan'
+const teksBonus = 'akaiwbskisyavwbsisishababakisusvabsksizuyzvakwoaoquywgwbwbaUsizisuwgsbsshssusvhhhhhhwvwusuusgwvwbsjsissisisysvsvwhwusuhssvvssbhusia adalah anugerah yang mendewasakan. jadikan setiap lembaran tahun baru sebagai kesempatan untuk membersihkan hati dan menebar lebih banyak manfaat bagi sesama...';
+
+let indeks = 0;
+
+function writeQuestion() {
+    if (indeks < teksHadiah.length) {
+        document.getElementById('teks1').innerHTML += teksHadiah.charAt(indeks);
+        indeks++;
+        setTimeout (writeQuestion, 50);
+    } 
+}
+
+function writeDoa() {
+    if (indeks < teksDoa.length) {
+        document.getElementById('teks2').innerHTML += teksDoa.charAt(indeks);
+        indeks++;
+        setTimeout (writeDoa, 50);
+    } else {
+      indeks= 0;
+      writeMotivasi();
+    }
+}
+
+function writeMotivasi() {
+    if (indeks < teksMotivasi.length) {
+        document.getElementById('teks3').innerHTML += teksMotivasi.charAt(indeks);
+        indeks++;
+        setTimeout (writeMotivasi, 50);
+    }
+}
+
+function writeBonus() {
+    if (indeks < teksBonus.length) {
+        document.getElementById('bonus').innerHTML += teksBonus.charAt(indeks);
+        indeks++;
+        setTimeout (writeBonus, 50);
+    }
+}
     </script>
 </body>
 </html>
