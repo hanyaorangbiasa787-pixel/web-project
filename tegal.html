@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Everything about Tegal</title>
+         <meta charset="UTF-8">
+    <meta name="author" content="rifqi">
+    <meta name="description" content="ini adalah web tentang tegal, kamu bisa mempelajari hal hal seperti tradisi,kuliner, bahasa, dan tempat tempat populer di tegal. dan satu lagi, authornya masih pemula jadi kalau kalian menemukan bug atau error saya mohon maaf, silahkan hubungi saya">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+    background-image: url('https://i.imgur.com/rGTupur.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center; 
+    background-attachment: fixed; 
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+#main-slide {
+    display: block;
+}
+#statement {
+    background: #2a2a2a;
+    width: 320px;
+    height: 120px;
+    margin: 30px auto;
+    padding: 2px;
+    opacity: 0.8;
+    border-radius: 8px;
+    border: 2px solid black;
+    font-weight: bold;
+}
+#ajakan {
+    width: 250px;
+    height: 40px;
+    background: #2a2a2a;
+    opacity: 0.8;
+    border-radius: 8px;
+    border: 2px solid black;
+    margin: 10px auto;
+}
+h1 {
+    font-size: 16px;
+    text-align: center;
+    margin: 10px auto;
+    color: white;
+    font-family: sans-serif;
+}
+h3 {
+    color: white;
+    font-family: sans-serif;
+    margin: 2px;
+}
+.box-change {
+    width: 200px;
+    height: 45px;
+    background: #2a2a2a;
+    opacity: 0.8;
+    border-radius: 8px;
+    border: 2px solid black;
+    border-left: 5px solid aquamarine;
+    margin: 3px;
+    display: flex;
+}
+#story-button, #place-button, #food-button, #language-button, #tradition-button {
+    justify-content: center;
+    width: 60px;
+    height: 20px;
+    margin: 10px;
+    border-radius: 4px;
+    background: aquamarine;
+    font-weight: bold;
+    border: none;
+    font-family: sans-serif;
+}
+
+
+#story-slide {
+    display: none;
+}
+#story {
+    border: 2px solid black;
+    border-left: 5px solid aquamarine;
+    background: #2a2a2a;
+    border-radius: 8px;
+    margin: 40px auto;
+}
+
+p {
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 3px auto;
+}
+/* bikin animasi gambar masuk */
+@keyframes geserstory {
+    from {
+        transform: translateX(-50vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+#story-image {
+    animation: geserstory 1s ease-out forwards;
+    overflow: hidden;
+    width: 220px;
+    max-width: 100% !important;
+    position: relative !important;
+}
+#story-image img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 5px !important;
+    border-radius: 3px;
+}
+#back-button1, #back-button2 {
+    color: white;
+    background-color: grey;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+}
+#back-button3, #back-button4 {
+    color: white;
+    background-color: grey;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+}
+#back-button5 {
+    color: white;
+    background-color: grey;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+
+
+
+#place-slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#penjelasan-guci {
+    border: 2px solid black;
+    border-left: 5px solid aquamarine;
+    background: #2a2a2a;
+    border-radius: 8px;
+    margin: 5px auto;
+}
+#guci-image {
+    animation: geserstory 1s ease-out forwards;
+    overflow: hidden;
+    width: 200px;
+    max-width: 100% !important;
+    position: relative !important;
+    top: -5px;
+}
+#guci-image img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 5px !important;
+    border-radius: 3px;
+}
+#penjelasan-PAI {
+    border: 2px solid black;
+    border-left: 5px solid aquamarine;
+    background: #2a2a2a;
+    border-radius: 8px;
+    margin: 5px auto;
+}
+#PAI-image {
+    animation: geserstory 1s ease-out forwards;
+    overflow: hidden;
+    width: 200px;
+    max-width: 100% !important;
+    position: relative !important;
+    top: -5px;
+    display: none;
+}
+#PAI-image img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 5px !important;
+    border-radius: 3px;
+}
+#penjelasan-wn {
+    border: 2px solid black;
+    border-left: 5px solid aquamarine;
+    background: #2a2a2a;
+    border-radius: 8px;
+    margin: 5px auto;
+}
+#wn-image {
+    animation: geserstory 1s ease-out forwards;
+    overflow: hidden;
+    width: 200px;
+    max-width: 100% !important;
+    position: relative !important;
+    top: 3px;
+    display: none;
+}
+#wn-image img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 5px !important;
+    border-radius: 3px;
+}
+
+#food-slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#kuliner1, #kuliner2, #kuliner3 {
+    border: 2px solid black;
+    border-left: 5px solid aquamarine;
+    background: #2a2a2a;
+    border-radius: 8px;
+    margin: 5px auto;
+}
+#kuliner1img {
+    animation: geserstory 1s ease-out forwards;
+    overflow: hidden;
+    width: 200px;
+    max-width: 100% !important;
+    position: relative !important;
+    top: 3px;
+    display: block;
+}
+#kuliner1img img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 5px !important;
+    border-radius: 3px;
+}
+#kuliner2img {
+    animation: geserstory 1s ease-out forwards;
+    overflow: hidden;
+    width: 200px;
+    max-width: 100% !important;
+    position: relative !important;
+    top: 3px;
+    display: none;
+}
+#kuliner2img img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 5px !important;
+    border-radius: 3px;
+}
+#kuliner3img {
+    animation: geserstory 1s ease-out forwards;
+    overflow: hidden;
+    width: 200px;
+    max-width: 100% !important;
+    position: relative !important;
+    top: 3px;
+    display: none;
+}
+#kuliner3img img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 5px !important;
+    border-radius: 3px;
+}
+
+#language-slide {
+    display: none;
+}
+#language {
+    border: 2px solid black;
+    border-left: 5px solid aquamarine;
+    background: #2a2a2a;
+    border-radius: 8px;
+    margin: 20px auto;
+}
+
+
+#tradition-slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#mantu-poci {
+    border: 2px solid black;
+    border-left: 5px solid aquamarine;
+    background: #2a2a2a;
+    border-radius: 8px;
+    margin: 5px auto;
+}
+#mantu-pociimg {
+    animation: geserstory 1s ease-out forwards;
+    overflow: hidden;
+    width: 200px;
+    max-width: 100% !important;
+    position: relative !important;
+    top: 3px;
+    display: block;
+}
+#mantu-pociimg img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 5px !important;
+    border-radius: 3px;
+}
+#moci {
+    border: 2px solid black;
+    border-left: 5px solid aquamarine;
+    background: #2a2a2a;
+    border-radius: 8px;
+    margin: 5px auto;
+}
+#mociimg {
+    animation: geserstory 1s ease-out forwards;
+    overflow: hidden;
+    width: 200px;
+    max-width: 100% !important;
+    position: relative !important;
+    top: 3px;
+    display: none;
+}
+#mociimg img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 5px !important;
+    border-radius: 3px;
+}
+#pn {
+    border: 2px solid black;
+    border-left: 5px solid aquamarine;
+    background: #2a2a2a;
+    border-radius: 8px;
+    margin: 5px auto;
+}
+#pnimg {
+    animation: geserstory 1s ease-out forwards;
+    overflow: hidden;
+    width: 200px;
+    max-width: 100% !important;
+    position: relative !important;
+    top: 3px;
+    display: none;
+}
+#pnimg img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 5px !important;
+    border-radius: 3px;
+}
+        </style>
+    </head>
+    <body>
+        <!-- slide utama -->
+        <div id='main-slide'>
+            <div id='statement'>
+            <h1>Selamat datang di pesona Kota Tegal, sebuah permata di pesisir utara Jawa Tengah yang dikenal luas sebagai Kota Bahari. Dengan julukan Tegal Laka-Laka (Tegal tiada duanya), kota ini memadukan warisan sejarah maritim, kekayaan budaya, dan pesona kuliner legendaris yang menjadi kebanggaan Nusantara.</h1>
+            </div>
+      <div id='ajakan'>
+          <h1>Yuk pelajari lebih dalam tentang Tegal!</h1>
+      </div>
+      
+      
+        <div class='box-change'>
+          <h1>Tempat populer</h1>
+          <button id='place-button'>Klik</button>
+      </div>
+      
+       <div class='box-change'>
+          <h1>Sejarah</h1>
+          <button id='story-button'>Klik</button>
+      </div>
+      
+      <div class='box-change'>
+          <h1>Kuliner</h1>
+          <button id='food-button'>Klik</button>
+      </div>
+      
+       <div class='box-change'>
+          <h1>Bahasa</h1>
+          <button id='language-button'>Klik</button>
+      </div>
+      
+      <div class='box-change'>
+          <h1>Tradisi</h1>
+          <button id='tradition-button'>Klik</button>
+      </div>
+        </div>
+        
+        
+      <!-- slide sejarah tegal -->  
+        <div id='story-slide'>
+            <div id='story'>
+                <p id='textStory'></p>
+            </div>
+            
+            
+            
+            <div id='story-image'>
+                <img src='https://i.imgur.com/I3mXQmF.jpg'>
+                <img src='https://i.imgur.com/cHuQhZt.jpg'>
+            </div>
+             
+            <button id='back-button1'>Kembali</button>
+        </div>
+        
+        
+        <!-- slide tempat tempat populer tegal-->
+        <div id='place-slide'>
+            <div id='penjelasan-guci'>
+                <h3>Guci Tegal:</h3>
+                <p id='guciText'></p>
+            </div>
+            
+            
+            
+            <div id='guci-image'>
+                <img src='https://i.imgur.com/0Op7mpe.jpg'>
+                <img src='https://i.imgur.com/PLCh8pY.jpg'>
+            </div>
+            
+            
+            
+            <div id='penjelasan-PAI'>
+                <h3>Pantai alam indah:</h3>
+                <p id='PAItext'></p>
+            </div>
+            
+            
+            
+            <div id='PAI-image'>
+                <img src='https://i.imgur.com/a7Px4DT.jpg'>
+                <img src='https://i.imgur.com/EA80yO8.jpg'>
+            </div>
+            
+            
+            
+            <div id='penjelasan-wn'>
+                <h3>Waduk cacaban:</h3>
+                <p id='wnText'></p>
+            </div>
+            
+            
+            
+            <div id='wn-image'>
+                <img src='https://i.imgur.com/47MdE6o.jpg'>
+            </div>
+            
+            <button id='back-button2'>
+                kembali
+            </button>
+        </div>
+        
+        
+        
+        <!-- slide kuliner tegal -->
+        <div id='food-slide'>
+            <div id='kuliner1'>
+                <h3> Sate kambing:</h3>
+                <p id='teksKuliner1'></p>
+            </div>
+            
+            
+            
+            <div id='kuliner1img'>
+                <img src='https://i.imgur.com/wVgzkRr.jpg'>
+            </div>
+            
+            
+            
+            <div id='kuliner2'>
+                <h3> Tahu aci:</h3>
+                <p id='teksKuliner2'></p>
+            </div>
+            
+            
+            
+            <div id='kuliner2img'>
+                <img src='https://i.imgur.com/ST615Ep.jpg'>
+            </div>
+            
+            
+            
+            <div id='kuliner3'>
+                <h3> Soto tauco:</h3>
+                <p id='teksKuliner3'></p>
+            </div>
+            
+            
+            
+            <div id='kuliner3img'>
+                <img src='https://i.imgur.com/2Aaeiim.jpg'>
+            </div>
+            <button id='back-button3'>
+                Kembali
+            </button>
+        </div>
+        
+        
+        
+        <!-- slide bahasa tegal -->
+        <div id='language-slide'>
+            <div id='language'>
+                <p id='tekslanguage'></p>
+            </div>
+            <button id="back-button4">
+                Kembali
+            </button>
+        </div>
+        
+        
+        
+        <!-- slide tradisi tegal -->
+        <div id='tradition-slide'>
+            <div id='mantu-poci'>
+                <h3>Mantu poci:</h3>
+                <p id='mpteks'></p>
+            </div>
+            
+            
+            
+            <div id='mantu-pociimg'>
+                <img src='https://i.imgur.com/9sAgvzs.jpg'>
+            </div>
+            
+            
+            
+            <div id='moci'>
+                <h3>Moci(Minum Teh Poci):</h3>
+                <p id='mociteks'></p>
+            </div>
+            
+            
+            
+            <div id='mociimg'>
+                <img src='https://i.imgur.com/v68VhV3.jpg'>
+            </div>
+            
+            
+            
+            <div id='pn'>
+                <h3>Prepegan dan Nyadran:</h3>
+                <p id='pnteks'></p>
+            </div>
+            
+            
+            
+            <div id='pnimg'>
+                <img src='https://i.imgur.com/wCfV1oy.jpg'>
+            </div>
+            
+            <button id='back-button5'>
+                Kembali
+            </button>
+        </div>
+        
+        <script>
+            const mainSlide = document.getElementById('main-slide')
+const storySlide = document.getElementById('story-slide')
+const placeSlide = document.getElementById('place-slide')
+const foodSlide = document.getElementById('food-slide')
+const languageSlide = document.getElementById('language-slide')
+const traditionSlide = document.getElementById('tradition-slide')
+
+const backButton1 = document.getElementById('back-button1')
+const backButton2 = document.getElementById('back-button2')
+const backButton3 = document.getElementById('back-button3')
+const backButton4 = document.getElementById('back-button4')
+const backButton5 = document.getElementById('back-button5')
+const storyButton = document.getElementById('story-button')
+const placeButton = document.getElementById('place-button')
+const foodButton = document.getElementById('food-button')
+const languageButton = document.getElementById('language-button')
+const traditionButton = document.getElementById('tradition-button')
+
+const textStory = 'Sejarah Tegal bermula dari sebuah desa kecil bernama Tetegal yang berkembang menjadi bandar pelabuhan penting pada abad ke-16. Kota ini resmi berdiri berkat kerja keras Ki Gede Sebayu yang berhasil memajukan pertanian dan ditetapkan sebagai hari jadi Tegal pada 12 April 1580.';
+const textGuci = 'Wisata Guci Tegal adalah destinasi pemandian air panas alami di kaki Gunung Slamet (sekitar 1.050 mdpl). Terkenal dengan pesona alam pegunungan dan udara yang sejuk, tempat ini menawarkan pengalaman relaksasi yang menyegarkan sekaligus dipercaya berkhasiat menyembuhkan berbagai penyakit kulit.';
+const textPAI = 'Pantai Alam Indah (PAI) adalah destinasi wisata bahari andalan di Kota Tegal, Jawa Tengah. Berlokasi di Kelurahan Mintaragen, pantai berpasir landai ini menawarkan keindahan Laut Jawa yang tenang serta menjadi lokasi bersantai favorit warga lokal untuk menikmati pemandangan matahari terbenam.';
+const textWN = 'Waduk Cacaban adalah bendungan bersejarah di Kabupaten Tegal yang diresmikan pada masa Presiden Soekarno. Terletak di Desa Penujah, Kedung Banteng, waduk seluas 928,7 hektare ini berfungsi sebagai penyuplai irigasi pertanian dan PLTA, sekaligus menjadi destinasi wisata alam dengan panorama perbukitan dan kuliner ikan yang populer.';
+const textKuliner1 = 'Terkenal menggunakan daging kambing muda di bawah lima bulan (balibul) atau di bawah tiga bulan (batibul), sehingga teksturnya sangat empuk dan tidak berbau prengus. Disajikan dengan sambal kecap dan irisan tomat segar.';
+const textKuliner2 = 'Camilan ikonik berupa potongan tahu kuning berbentuk segitiga yang dilapisi aci (tepung tapioka) kenyal dan gurih. Paling nikmat disantap hangat dengan cabai rawit.';
+const textKuliner3 = 'Soto khas pesisir utara yang menggunakan bumbu tauco (pasta kedelai fermentasi) pada kuahnya, memberikan sensasi rasa gurih, sedikit manis, dan asam.';
+const textLanguage = 'Bahasa di Tegal adalah Bahasa Jawa dialek Tegal (sering disebut Basa Tegalan). Bahasa ini sangat khas, dinamis, dan menjadi identitas budaya masyarakat setempat, yang wilayah penuturannya membentang dari Kabupaten Brebes, Kota dan Kabupaten Tegal, hingga sebagian wilayah barat Kabupaten Pemalang.';
+const textMp = 'Tradisi unik masyarakat pesisir Tegal yang menggelar resepsi pernikahan untuk sepasang poci (teko tanah liat). Dulunya dilakukan untuk menghindari rasa malu akibat mempelai kabur, kini tradisi ini biasa dilakukan sebagai wujud nazar atau doa dan harapan agar segera dikaruniai keturunan.';
+const textMoci = 'Merupakan ikon budaya minum teh khas Tegal yang diseduh menggunakan poci dari tanah liat dan disajikan bersama gula batu. Tradisi ini tidak hanya sekadar menikmati minuman, tetapi juga menjadi media utama untuk berkumpul, berinteraksi, dan mempererat tali silaturahmi.';
+const textPn = 'Menjelang Hari Raya Idul Fitri, warga Tegal melakukan Prepegan (berbelanja kebutuhan pokok dan pakaian di pasar). Selain itu, terdapat tradisi Nyadran di mana anggota keluarga yang lebih muda berkunjung kepada kerabat yang lebih tua dengan membawa bingkisan (cangkingan) berupa teh, gula, sirup, atau kue kering.';
+
+
+const PAIimg = document.getElementById('PAI-image')
+const wnimg = document.getElementById('wn-image')
+const kuliner2img = document.getElementById('kuliner2img')
+const kuliner3img = document.getElementById('kuliner3img')
+const mociimg = document.getElementById('mociimg')
+const pnimg = document.getElementById('pnimg')
+
+
+
+// bikin animasi teks ketik, pergantian slide, keluar masuk gambar dan sebagainya
+let typingTimeout;
+function resetAnimation() {
+    clearTimeout(typingTimeout);
+    document.getElementById('textStory').innerHTML = '';
+    document.getElementById('guciText').innerHTML = '';
+    document.getElementById('PAItext').innerHTML = '';
+    document.getElementById('wnText').innerHTML = '';
+    document.getElementById('teksKuliner1').innerHTML = '';
+    document.getElementById('teksKuliner2').innerHTML = '';
+    document.getElementById('teksKuliner3').innerHTML = '';
+    document.getElementById('tekslanguage').innerHTML = '';
+    document.getElementById('mpteks').innerHTML = '';
+    document.getElementById('mociteks').innerHTML = '';
+    document.getElementById('pnteks').innerHTML = '';
+    PAIimg.style.display = 'none';
+    wnimg.style.display = 'none';
+    kuliner2img.style.display = 'none';
+    kuliner3img.style.display = 'none';
+    mociimg.style.display = 'none'; 
+    pnimg.style.display = 'none';
+}
+
+// ini bagian teks sejarah(selesai)
+function addTextStory(indeks = 0) {
+    if (indeks < textStory.length) {
+        document.getElementById('textStory').innerHTML += textStory.charAt(indeks);
+        typingTimeout = setTimeout(() => addTextStory (indeks +1), 50);
+    }
+}
+
+storyButton.addEventListener('click', function() {
+    mainSlide.style.display = 'none';
+    storySlide.style.display = 'block';
+    resetAnimation();
+    addTextStory(0);
+});
+
+backButton1.addEventListener('click', function() {
+    resetAnimation();
+    mainSlide.style.display = 'block';
+    storySlide.style.display = 'none';
+})
+
+
+
+// ini bagian teks tempat populer(selesai)
+function addGuciStory(indeks = 0) {
+    if (indeks < textGuci.length) {
+        document.getElementById('guciText').innerHTML += textGuci.charAt(indeks);
+        typingTimeout = setTimeout(() => addGuciStory(indeks +1), 50);
+    } else {
+        addPAIStory(0);
+        PAIimg.style.display = 'block';
+    }
+}
+
+function addPAIStory(indeks = 0)  {
+    if (indeks < textPAI.length) {
+        document.getElementById('PAItext').innerHTML += textPAI.charAt(indeks);
+        typingTimeout = setTimeout(() => addPAIStory(indeks +1), 50);
+    } else {
+        addWNStory(0);
+        wnimg.style.display = 'block';
+    }
+}
+
+function addWNStory(indeks = 0) {
+    if (indeks < textWN.length) {
+        document.getElementById('wnText').innerHTML += textWN.charAt(indeks);
+        typingTimeout = setTimeout(() => addWNStory(indeks +1), 50);
+    }
+}
+
+placeButton.addEventListener('click', function() {
+    mainSlide.style.display = 'none';
+    placeSlide.style.display = 'block';
+    resetAnimation();
+    addGuciStory(0);
+});
+
+backButton2.addEventListener('click', function() {
+    mainSlide.style.display = 'block';
+    placeSlide.style.display = 'none';
+    resetAnimation();
+});
+
+
+
+// ini bagian teks kuliner(selesai)
+foodButton.addEventListener('click', function() {
+    mainSlide.style.display = 'none';
+    foodSlide.style.display = 'block';
+    resetAnimation();
+    addKuliner1(0);
+});
+
+function addKuliner1(indeks = 0) {
+    if (indeks < textKuliner1.length) {
+        document.getElementById('teksKuliner1').innerHTML += textKuliner1.charAt(indeks);
+        typingTimeout = setTimeout(() => addKuliner1(indeks +1), 50);
+    } else {
+        kuliner2img.style.display = 'block';
+        addKuliner2(0);
+    }
+}
+
+function addKuliner2(indeks = 0) {
+    if (indeks < textKuliner2.length) {
+        document.getElementById('teksKuliner2').innerHTML += textKuliner2.charAt(indeks);
+        typingTimeout = setTimeout(() => addKuliner2(indeks +1), 50);
+    } else {
+        kuliner3img.style.display = 'block';
+        addKuliner3(0)
+    }
+}
+
+function addKuliner3(indeks = 0) {
+    if (indeks < textKuliner3.length) {
+        document.getElementById('teksKuliner3').innerHTML += textKuliner3.charAt(indeks);
+        typingTimeout = setTimeout(() => addKuliner3(indeks +1), 50);
+    }
+}
+
+backButton3.addEventListener('click', function() {
+    foodSlide.style.display = 'none';
+    mainSlide.style.display = 'block';
+    resetAnimation();
+});
+
+
+
+// ini bagian teks bahasa (selesai)
+languageButton.addEventListener('click', function() {
+    mainSlide.style.display = 'none';
+    languageSlide.style.display = 'block';
+    resetAnimation();
+    addLanguage(0);
+});
+
+function addLanguage(indeks = 0) {
+    if (indeks < textLanguage.length) {
+        document.getElementById('tekslanguage').innerHTML += textLanguage.charAt(indeks);
+        typingTimeout = setTimeout(() => addLanguage(indeks +1), 50);
+    }
+}
+
+backButton4.addEventListener('click', function() {
+    mainSlide.style.display = 'block';
+    languageSlide.style.display = 'none';
+    resetAnimation();
+});
+
+
+
+// ini bagian tradisi (belum selesai)
+traditionButton.addEventListener('click', function() {
+    mainSlide.style.display = 'none';
+    traditionSlide.style.display = 'block';
+    resetAnimation();
+    addMp(0);
+});
+
+function addMp(indeks = 0) {
+    if (indeks < textMp.length) {
+        document.getElementById('mpteks').innerHTML += textMp.charAt(indeks);
+        typingTimeout = setTimeout(() => addMp (indeks +1), 50);
+    } else {
+        addMoci(0);
+        mociimg.style.display = 'block'
+    }
+}
+
+function addMoci(indeks = 0) {
+    if (indeks < textMoci.length) {
+        document.getElementById('mociteks').innerHTML += textMoci.charAt(indeks);
+        typingTimeout = setTimeout(() => addMoci (indeks +1), 50);
+    } else {
+        addPn(0);
+        pnimg.style.display = 'block';
+    }
+}
+
+function addPn (indeks = 0) {
+    if (indeks < textPn.length) {
+        document.getElementById('pnteks').innerHTML += textPn.charAt(indeks);
+        typingTimeout = setTimeout(() => addPn (indeks +1), 50);
+    }
+}
+
+backButton5.addEventListener('click', function() {
+    mainSlide.style.display = 'block';
+    traditionSlide.style.display = 'none';
+    resetAnimation();
+});
+        </script>
+    </body>
+</html>
